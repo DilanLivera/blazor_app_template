@@ -3,14 +3,14 @@
 
 <PageTitle>Counter</PageTitle>
 
-<div class="bg-white p-6 rounded-lg shadow-md">
-    <h1 class="text-3xl font-bold text-gray-800 mb-6">Counter</h1>
+<div class="bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-700">
+    <h1 class="text-3xl font-bold text-blue-400 mb-6 tracking-tight">Counter</h1>
 
-    <div class="mb-6">
-        <p class="text-xl text-gray-700" role="status">Current count: <span class="font-bold text-blue-600">@currentCount</span></p>
+    <div class="mb-8 p-4 bg-gray-700 rounded-lg border border-gray-600">
+        <p class="text-xl text-gray-300 leading-relaxed" role="status">Current count: <span class="font-bold text-blue-400">@currentCount</span></p>
     </div>
 
-    <button class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" @onclick="IncrementCount">
+    <button class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition duration-200" @onclick="IncrementCount">
         <svg class="w-4 h-4 inline-block mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path>
         </svg>

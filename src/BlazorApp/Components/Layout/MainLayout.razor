@@ -1,21 +1,21 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="flex h-screen bg-gray-100">
-    <div class="w-64 bg-white shadow-lg">
+<div class="flex h-screen bg-gray-900 font-sans antialiased text-gray-200">
+    <div class="w-64 bg-gray-800 shadow-lg border-r border-gray-700">
         <NavMenu/>
     </div>
 
-    <main class="flex-1 overflow-x-hidden overflow-y-auto">
+    <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-900">
         <article class="container mx-auto px-6 py-8">
             @Body
         </article>
     </main>
 </div>
 
-<div id="blazor-error-ui" class="fixed bottom-0 w-full bg-red-100 border-t-4 border-red-500 p-4 flex justify-between items-center hidden">
-    <p class="text-red-700">An unhandled error has occurred.</p>
+<div id="blazor-error-ui" class="fixed bottom-0 w-full bg-red-900 border-t-4 border-red-500 p-4 flex justify-between items-center hidden">
+    <p class="text-red-200">An unhandled error has occurred.</p>
     <div class="flex space-x-2">
-        <a href="" class="text-red-700 hover:text-red-900 underline">Reload</a>
-        <a class="text-red-700 hover:text-red-900 cursor-pointer">🗙</a>
+        <a href="" class="text-red-200 hover:text-red-100 underline">Reload</a>
+        <a class="text-red-200 hover:text-red-100 cursor-pointer">🗙</a>
     </div>
 </div>
