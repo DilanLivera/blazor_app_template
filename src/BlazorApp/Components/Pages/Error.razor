@@ -3,26 +3,59 @@
 
 <PageTitle>Error</PageTitle>
 
-<h1 class="">Error.</h1>
-<h2 class="">An error occurred while processing your request.</h2>
+<div class="p-6">
+    <h1 class="text-3xl font-bold text-blue-400 mb-4 tracking-tight">
+        Error
+    </h1>
+    <h2 class="text-xl text-red-400 mb-6">
+        An error occurred while processing your request.
+    </h2>
 
-@if (ShowRequestId)
-{
-    <p>
-        <strong>Request ID:</strong> <code>@RequestId</code>
-    </p>
-}
+    @if (ShowRequestId)
+    {
+        <div class="p-4 mb-6 bg-gray-700 rounded-lg border border-gray-600">
+            <p class="text-gray-300">
+                <strong>Request ID:</strong>
+                <code class="bg-gray-900 px-2 py-1 rounded text-gray-300">
+                    @RequestId
+                </code>
+            </p>
+        </div>
+    }
 
-<h3>Development Mode</h3>
-<p>
-    Swapping to <strong>Development</strong> environment will display more detailed information about the error that occurred.
-</p>
-<p>
-    <strong>The Development environment shouldn't be enabled for deployed applications.</strong>
-    It can result in displaying sensitive information from exceptions to end users.
-    For local debugging, enable the <strong>Development</strong> environment by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>
-    and restarting the app.
-</p>
+    <div class="p-6 bg-gray-700 rounded-lg border border-gray-600 mb-6">
+        <h3 class="text-xl font-semibold text-gray-200 mb-4">
+            Development Mode
+        </h3>
+        <p class="text-gray-300 mb-4 leading-relaxed">
+            Swapping to <strong class="text-blue-400">Development</strong> environment will display more detailed information about the error that occurred.
+        </p>
+        <p class="text-gray-300 leading-relaxed">
+            <strong class="text-yellow-400">
+                The Development environment shouldn't be enabled for deployed applications.
+            </strong>
+            It can result in displaying sensitive information from exceptions to end users.
+            For local debugging, enable the <strong class="text-blue-400">Development</strong> environment by setting the <strong class="text-blue-400">ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong class="text-blue-400">Development</strong>
+            and restarting the app.
+        </p>
+    </div>
+
+    <div class="flex justify-center">
+        <a href="/"
+           class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center transition duration-200">
+            Return Home
+            <svg class="w-4 h-4 ml-2"
+                 fill="currentColor"
+                 viewBox="0 0 20 20"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                      clip-rule="evenodd">
+                </path>
+            </svg>
+        </a>
+    </div>
+</div>
 
 @code{
     [CascadingParameter] private HttpContext? HttpContext { get; set; }
