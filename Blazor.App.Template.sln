@@ -8,9 +8,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
+		docker-compose.yml = docker-compose.yml
 		nuget.config = nuget.config
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{37EEFFC7-40B7-4FB5-B65E-CB037D099D54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp", "src\BlazorApp\BlazorApp.csproj", "{428932AB-A3BA-44A5-B758-4DDE1941D1BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,5 +24,15 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{37EEFFC7-40B7-4FB5-B65E-CB037D099D54} = {059D0EFC-C0D7-49FB-AAD2-10A6DEB0D818}
+		{428932AB-A3BA-44A5-B758-4DDE1941D1BC} = {37EEFFC7-40B7-4FB5-B65E-CB037D099D54}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{428932AB-A3BA-44A5-B758-4DDE1941D1BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{428932AB-A3BA-44A5-B758-4DDE1941D1BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{428932AB-A3BA-44A5-B758-4DDE1941D1BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{428932AB-A3BA-44A5-B758-4DDE1941D1BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

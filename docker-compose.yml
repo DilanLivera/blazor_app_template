@@ -1,0 +1,6 @@
+﻿services:
+  blazorapp:
+    image: blazorapp
+    build:
+      context: .
+      dockerfile: src/BlazorApp/Dockerfile
