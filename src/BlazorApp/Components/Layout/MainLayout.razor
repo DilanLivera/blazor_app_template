@@ -1,22 +1,42 @@
 ﻿@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
 
-<div class="flex h-screen bg-gray-900 font-sans antialiased text-gray-200">
-    <Sidebar/>
+<div class="flex flex-col h-screen bg-[#0f1729] font-sans antialiased text-gray-200">
+    <Header></Header>
 
-    <div class="flex-1 flex flex-col overflow-hidden">
-        <Header></Header>
-        <main class="flex-1 overflow-x-hidden overflow-y-auto p-4 sm:ml-64">
-            <article class="container mx-auto px-6 py-8">
+    <div class="flex flex-1 overflow-hidden">
+        <Sidebar/>
+        <main class="flex-1 overflow-x-hidden overflow-y-auto">
+            <article class="p-4">
                 @Body
             </article>
         </main>
     </div>
 </div>
 
-<div id="blazor-error-ui" class="fixed bottom-0 w-full bg-red-900 border-t-4 border-red-500 p-4 flex justify-between items-center hidden">
-    <p class="text-red-200">An unhandled error has occurred.</p>
+<div id="blazor-error-ui"
+     class="fixed bottom-0 w-full bg-red-900 border-t-4 border-red-500 p-4 flex justify-between items-center hidden">
+    <p class="text-red-200">
+        An unhandled error has occurred.
+    </p>
     <div class="flex space-x-2">
-        <a href="" class="text-red-200 hover:text-red-100 underline">Reload</a>
-        <a class="text-red-200 hover:text-red-100 cursor-pointer">🗙</a>
+        <a href=""
+           @onclick="ReloadPage"
+           @onclick:preventDefault
+           class="text-red-200 hover:text-red-100 underline">
+            Reload
+        </a>
+        <a class="dismiss">
+            🗙
+        </a>
     </div>
 </div>
+
+@code {
+
+    private void ReloadPage()
+    {
+        NavigationManager.NavigateTo(NavigationManager.Uri, forceLoad: true);
+    }
+
+}
