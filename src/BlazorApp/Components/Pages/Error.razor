@@ -41,8 +41,8 @@
                    class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors duration-200">
                     Return Home
                 </a>
-                <button @onclick="ReloadPage"
-                        class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors duration-200">
+                <button class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors duration-200"
+                        onclick="window.location.reload()">
                     Reload Page
                 </button>
             </div>
@@ -53,8 +53,6 @@
 @code {
     [CascadingParameter] private HttpContext? HttpContext { get; set; }
 
-    [Inject] private NavigationManager NavigationManager { get; set; } = default!;
-
     private string RequestId { get; set; } = "";
 
     protected override void OnInitialized()
@@ -62,11 +60,6 @@
         RequestId = Activity.Current?.Id ??
                     HttpContext?.TraceIdentifier ??
                     throw new InvalidOperationException("Current Activity Id or HttpContext's Trace Id can not be null");
-    }
-
-    private void ReloadPage()
-    {
-        NavigationManager.NavigateTo(NavigationManager.Uri, forceLoad: true);
     }
 
 }
