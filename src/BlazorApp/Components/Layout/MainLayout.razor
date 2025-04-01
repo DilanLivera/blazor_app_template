@@ -1,5 +1,4 @@
 ﻿@inherits LayoutComponentBase
-@inject NavigationManager NavigationManager
 
 <div class="flex flex-col h-screen bg-[#0f1729] font-sans antialiased text-gray-200">
     <Header></Header>
@@ -16,27 +15,13 @@
 
 <div id="blazor-error-ui"
      class="fixed bottom-0 w-full bg-red-900 border-t-4 border-red-500 p-4 flex justify-between items-center hidden">
-    <p class="text-red-200">
-        An unhandled error has occurred.
-    </p>
-    <div class="flex space-x-2">
-        <a href=""
-           @onclick="ReloadPage"
-           @onclick:preventDefault
-           class="text-red-200 hover:text-red-100 underline">
+    <div class="flex items-center space-x-4">
+        <p class="text-red-200">
+            An unhandled error has occurred.
+        </p>
+        <button class="cursor-pointer px-3 py-1 bg-red-800 text-red-200 rounded hover:bg-red-700"
+                onclick="window.location.reload()">
             Reload
-        </a>
-        <a class="dismiss">
-            🗙
-        </a>
+        </button>
     </div>
 </div>
-
-@code {
-
-    private void ReloadPage()
-    {
-        NavigationManager.NavigateTo(NavigationManager.Uri, forceLoad: true);
-    }
-
-}
